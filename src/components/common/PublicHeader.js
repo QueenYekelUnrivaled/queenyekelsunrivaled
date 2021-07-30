@@ -74,9 +74,9 @@ const PublicHeader = () => {
                             <Button type='link' link={ROUTE_LINKS.FAQ} className='btn btn-link mg-r-20'>
                                 <span>FAQ</span>
                             </Button>
-                            <Button type='link' link={ROUTE_LINKS.NEWS} className='btn btn-link mg-r-20'>
+                            {/* <Button type='link' link={ROUTE_LINKS.NEWS} className='btn btn-link mg-r-20'>
                                 <span>News</span>
-                            </Button>
+                            </Button> */}
                             <Button type='link' link={ROUTE_LINKS.CONTACT_US} className='btn btn-link mg-r-20'>
                                 <span>Contact</span>
                             </Button>

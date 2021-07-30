@@ -33,7 +33,8 @@ const PublicFooter = ({ use_image }) => {
                         <Icons name='IconCall' size={22} color={colors.light_red} />
                         <div className='content'>
                             <p>Phone</p>
-                            <span>679-285-216 </span><br />
+                            <span>679-285-216 </span>
+                            <br />
                             <span>659-357-249</span>
                         </div>
                     </div>
@@ -61,7 +62,7 @@ const PublicFooter = ({ use_image }) => {
                         <Link to={ROUTE_LINKS.ABOUT}>About</Link>
                         <Link to={ROUTE_LINKS.REGISTERATION}>Enroll Now</Link>
                         <Link to={ROUTE_LINKS.FAQ}>Faq</Link>
-                        <Link to={ROUTE_LINKS.NEWS}>News</Link>
+                        {/* <Link to={ROUTE_LINKS.NEWS}>News</Link> */}
                         <Link to={ROUTE_LINKS.TERMS_CONDITION}>Privacy Policy</Link>
                     </div>
                 </div>
