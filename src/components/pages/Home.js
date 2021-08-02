@@ -99,7 +99,7 @@ const Home = () => {
                                 <div className='card pd-b-10'>
                                     <img src={Home2} alt='class' className='image-header' />
                                     <div className='card-content features-caption'>
-                                        <Link to={ROUTE_LINKS.NEWS}>
+                                        <Link to={ROUTE_LINKS.SERVICE}>
                                             <h3>Intelligence</h3>
                                         </Link>
                                         <p>Our academic programs aim to build communication skills, social and emotional skills, early reading and writing skills and motor skills in pupils. </p>
@@ -108,7 +108,7 @@ const Home = () => {
                                 <div className='card pd-b-10'>
                                     <img src={Home3} alt='class' className='image-header' />
                                     <div className='card-content features-caption'>
-                                        <Link to={ROUTE_LINKS.NEWS}>
+                                        <Link to={ROUTE_LINKS.SERVICE}>
                                             <h3>Communication</h3>
                                         </Link>
                                         <p>Languages (English, French and Chinese) and information technology (IT) skills will be developed in the children.</p>
@@ -117,7 +117,7 @@ const Home = () => {
                                 <div className='card pd-b-10'>
                                     <img src={Home4} alt='class' className='image-header' />
                                     <div className='card-content features-caption'>
-                                        <Link to={ROUTE_LINKS.NEWS}>
+                                        <Link to={ROUTE_LINKS.SERVICE}>
                                             <h3>A Solid Foundation</h3>
                                         </Link>
                                         <p>With a program like this, the children will have a solid foundation and will find little to no difficulties when they grow into different stages in life.</p>
@@ -125,7 +125,7 @@ const Home = () => {
                                 </div>
                             </div>
                             <div>
-                                <Button type='link' className='btn btn-link enroll-now circle mg-t-10 flex justify-center' link='/news'>
+                                <Button type='link' className='btn btn-link enroll-now circle mg-t-10 flex justify-center' link='/service'>
                                     View More
                                 </Button>
                             </div>
