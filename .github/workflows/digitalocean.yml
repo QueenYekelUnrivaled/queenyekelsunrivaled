@@ -16,8 +16,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Stop all pm2 services
         run: |
-          npx pm2 stop all
-          npx pm2 list
+          ls
         
 #       - name: Stop all pm2 services
 # #         uses: shimataro/ssh-key-action@v2
