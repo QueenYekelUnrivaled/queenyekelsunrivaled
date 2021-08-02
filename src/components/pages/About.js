@@ -156,7 +156,7 @@ const About = () => {
                             <div className='about-container'>
                                 <div className='single-teacher-text-item info'>
                                     <span>Expert Teachers</span>
-                                    <h3>And Profficient Instructors</h3>
+                                    <h3>And Proficient Instructors</h3>
                                     <p>We have a qualified team of experts in required domains necessary for proper upbringing of every kid</p>
                                 </div>
 
