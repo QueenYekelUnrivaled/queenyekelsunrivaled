@@ -14,7 +14,8 @@ jobs:
     
     steps:
       - name: Stop all pm2 services
-        uses: shimataro/ssh-key-action@v2
+#         uses: shimataro/ssh-key-action@v2
+        uses: actions/checkout@v1
         with:
           host: ${{secrets.SSH_HOST}} # Ip address of the server
           key: ${{secrets.SSH_PRIVATE_KEY}} # private or public key of the server
@@ -22,7 +23,6 @@ jobs:
           
           script: |
             echo: echo ${{secrets.SSH_HOST}} ${{secrets.SSH_KEY}}
-            ls: ls
             
           
     
