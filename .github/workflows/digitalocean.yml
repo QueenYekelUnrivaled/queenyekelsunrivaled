@@ -8,41 +8,21 @@ on:
     branches: [ main ]
 
 jobs:
-#   build:
-
-#     runs-on: ubuntu-latest
-
-#     strategy:
-#       matrix:
-#         node-version: [12.x, 14.x, 16.x]
-#         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Use Node.js ${{ matrix.node-version }}
-#       uses: actions/setup-node@v2
-#       with:
-#         node-version: ${{ matrix.node-version }}
-#     - run: npm ci
-#     - run: npm run build --if-present
-#     - run: npm test
-    
   deploy:
     
     runs-on: ubuntu-latest
     
     steps:
-      - name: Deploy React Application
+      - name: Stop all pm2 services
         uses: shimataro/ssh-key-action@v2
         with:
-            key: ${{ secrets.SSH_PRIVATE_KEY }}
-            known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
-            
-#           host: ${{secrets.SSH_HOST}} # Ip address of the server
-#           key: ${{secrets.SSH_KEY}} # private or public key of the server
-#           username: ${{secrets.SSH_USERNAME}} # user of the server
+          host: ${{secrets.SSH_HOST}} # Ip address of the server
+          key: ${{secrets.SSH_PRIVATE_KEY}} # private or public key of the server
+          username: ${{secrets.SSH_USERNAME}} # user of the server
           
-#           script: |
-#             echo: echo ${{secrets.SSH_HOST}} ${{secrets.SSH_KEY}}
+          script: |
+            echo: echo ${{secrets.SSH_HOST}} ${{secrets.SSH_KEY}}
+            ls: ls
+            
           
     
