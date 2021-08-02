@@ -29,7 +29,7 @@ jobs:
           key: ${{secrets.SSH_PRIVATE_KEY}} # private or public key of the server
           username: ${{secrets.SSH_USERNAME}} # user of the server
           source: "."
-          target: "/queenyekelsunrivaled/"
+          target: "./"
             
       - name: Start node
         uses: appleboy/ssh-action@master
