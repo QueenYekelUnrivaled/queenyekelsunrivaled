@@ -13,16 +13,23 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - uses: actions/checkout@v1
       - name: Stop all pm2 services
-#         uses: shimataro/ssh-key-action@v2
-        uses: actions/checkout@v1
-        with:
-          host: ${{secrets.SSH_HOST}} # Ip address of the server
-          key: ${{secrets.SSH_PRIVATE_KEY}} # private or public key of the server
-          username: ${{secrets.SSH_USERNAME}} # user of the server
+        run: |
+          npx pm2 stop all
+          npx pm2 list
+        
+#       - name: Stop all pm2 services
+# #         uses: shimataro/ssh-key-action@v2
+#         uses: appleboy/ssh-action@master
+#         with:
+#           host: ${{secrets.SSH_HOST}} # Ip address of the server
+#           key: ${{secrets.SSH_PRIVATE_KEY}} # private or public key of the server
+#           username: ${{secrets.SSH_USERNAME}} # user of the server
           
-          script: |
-            echo: echo ${{secrets.SSH_HOST}} ${{secrets.SSH_KEY}}
+#           script: |
+#             echo: echo ${{secrets.SSH_HOST}} ${{secrets.SSH_KEY}}
+            
             
           
     
