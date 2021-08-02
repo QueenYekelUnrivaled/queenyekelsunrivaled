@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: appleboy/ssh-action@master
+      - uses: appleboy/ssh-action@main
       - name: Stop all pm2 service
         with:
           host: ${{secrets.SSH_HOST}} # Ip address of the server
