@@ -13,17 +13,30 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: appleboy/ssh-action@main
       - name: Stop all pm2 service
+        uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.SSH_HOST}} # Ip address of the server
           key: ${{secrets.SSH_PRIVATE_KEY}} # private or public key of the server
           username: ${{secrets.SSH_USERNAME}} # user of the server
-                  
-          script: |
-            echo: echo ${{secrets.SSH_HOST}} ${{secrets.SSH_KEY}}
+          script: npx pm2 stop all
             
+      
+      - name: copy file via ssh key
+        uses: ./
+        with:
+          host: ${{secrets.SSH_HOST}} # Ip address of the server
+          key: ${{secrets.SSH_PRIVATE_KEY}} # private or public key of the server
+          username: ${{secrets.SSH_USERNAME}} # user of the server
+          source: "."
+          target: "/queenyekelsunrivaled/"
             
-            
+      - name: Start node
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.SSH_HOST}} # Ip address of the server
+          key: ${{secrets.SSH_PRIVATE_KEY}} # private or public key of the server
+          username: ${{secrets.SSH_USERNAME}} # user of the server
+          script: npx pm2 start "npm start"
           
     
