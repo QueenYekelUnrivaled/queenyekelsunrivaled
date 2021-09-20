@@ -67,5 +67,5 @@ jobs:
           script: |
             # start application
             cd ~/queenyekelsunrivaled
-            node run.js
+            npx pm2 start "npm run start" --name "queenyekelsunrivaled"
           
