@@ -18,6 +18,8 @@ pm2.connect(function (err) {
                 return pm2.disconnect();
             }
 
+            console.log(apps);
+            return apps;
             // pm2.list((err, list) => {
             //     console.log(err, list);
 
