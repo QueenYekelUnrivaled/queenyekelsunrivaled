@@ -13,7 +13,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     
     steps:
-      - name: Update npm pm2 path & Stop queenyekelunrivaled pm2 service
+      - name: Update npm pm2 path
         uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.SSH_HOST}} # Ip address of the server
@@ -23,9 +23,7 @@ jobs:
             # Update path to include npm pm2
             export NVM_DIR=$HOME/.nvm
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-            
-            # stop application
-            npx pm2 delete -s queenyekelsunrivaled || :
+
             
       - name: checkout
         uses: actions/checkout@v1
@@ -67,5 +65,5 @@ jobs:
           script: |
             # start application
             cd ~/queenyekelsunrivaled
-            npx pm2 start "npm run start" --name "queenyekelsunrivaled"
+            npx pm2 restart "npm run start" --name "queenyekelsunrivaled"
           
