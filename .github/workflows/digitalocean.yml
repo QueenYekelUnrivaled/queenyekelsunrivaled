@@ -65,5 +65,5 @@ jobs:
           script: |
             # start application
             cd ~/queenyekelsunrivaled
-            npx pm2 restart "npm run start" --name "queenyekelsunrivaled"
+            npx pm2 restart "npm start" --name "queenyekelsunrivaled"
           
