@@ -66,4 +66,4 @@ jobs:
           script: |
             # start application
             cd ~/queenyekelsunrivaled
-            pm2 restart "npm run start" --name "queenyekelsunrivaled"
+            node run.js
