@@ -31,7 +31,6 @@ const About = () => {
 
         const response = await addSubscriber(values);
         if (!response.ok) {
-            console.log(response);
             if (!response.data) setErrors([response.problem.replace('_', ' ')]);
             else {
                 const { data } = response.data;
@@ -39,7 +38,7 @@ const About = () => {
             }
         } else {
             const { data } = response.data;
-            setToastState(data);
+            setToastState({ ...data });
             setToastType({ type: 'success', icon: 'IconSuccess' });
         }
 
