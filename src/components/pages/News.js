@@ -103,7 +103,7 @@ const News = () => {
                                 <form action=''>
                                     <div className='form-group'>
                                         <div className='input-group'>
-                                            <input type='text' class='form-control' placeholder='Search Key' />
+                                            <input type='text' className='form-control' placeholder='Search Key' />
                                         </div>
                                     </div>
                                     <button className='main-search-btn'>Search</button>

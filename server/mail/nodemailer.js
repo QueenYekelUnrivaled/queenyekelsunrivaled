@@ -11,8 +11,8 @@ const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
     auth: {
-        user: 'vegascedrictest@gmail.com',
-        pass: 'nilkywmovyupxyjm',
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASSWORD,
     },
 });
 
@@ -25,7 +25,10 @@ const sendMailTemplate = async (from, to, subject, type, data) => {
         html = template(data);
     }
 
-    return transporter.sendMail({ from, to, subject, html });
+    return transporter.sendMail({ from, to, subject, html }).catch(err => {
+        console.error(err);
+        return false;
+    });
 };
 
 module.exports = { sendMailTemplate };

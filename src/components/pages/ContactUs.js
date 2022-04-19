@@ -29,8 +29,8 @@ const ContactUs = () => {
         if (!response.ok) setErrors([response.problem.replace('_', ' ')]);
         else {
             const { data } = response.data;
-            setToastState(data);
             setToastType({ type: 'success', icon: 'IconSuccess' });
+            setToastState({ ...data });
         }
 
         return setShowSpinner(false);
@@ -131,8 +131,8 @@ const ContactUs = () => {
                                                     <Icons name='IconLocation' size={39} color={colors.light_red} />
                                                     <p>
                                                         location: <span>Bonamoussadi, Douala, Cameroon. <br />200 METERS FROM
-                                                        ALIMENTATION FRAICHEUR AND GOVERNMENT ENGLISH PRIMARY SCHOOL.</span>
-                                                        
+                                                            ALIMENTATION FRAICHEUR AND GOVERNMENT ENGLISH PRIMARY SCHOOL.</span>
+
                                                     </p>
                                                 </div>
                                             </li>
@@ -158,7 +158,7 @@ const ContactUs = () => {
                                             <li>
                                                 <p>
                                                     <span>Monday - Friday </span>8AM - 5PM
-                                                </p>                                                
+                                                </p>
                                             </li>
                                         </div>
                                         <h3>Learning Time</h3>
