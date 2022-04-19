@@ -41,6 +41,7 @@ jobs:
             cd ~/queenyekelsunrivaled
             git fetch
             git reset --hard origin/main
+
             # Migrate Database
             prisma migrate deploy
 
