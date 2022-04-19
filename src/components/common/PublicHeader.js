@@ -100,9 +100,9 @@ const PublicHeader = () => {
                             <Button type='link' link={ROUTE_LINKS.FAQ} className='btn btn-link'>
                                 <span>Faq</span>
                             </Button>
-                            <Button type='link' link={ROUTE_LINKS.NEWS} className='btn btn-link'>
+                            {/* <Button type='link' link={ROUTE_LINKS.NEWS} className='btn btn-link'>
                                 <span>News</span>
-                            </Button>
+                            </Button> */}
                             <Button type='link' link={ROUTE_LINKS.CONTACT_US} className='btn btn-link'>
                                 <span>Contact</span>
                             </Button>
