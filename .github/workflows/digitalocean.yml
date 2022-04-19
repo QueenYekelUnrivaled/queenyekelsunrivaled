@@ -66,5 +66,6 @@ jobs:
           script: |
             # start application
             cd ~/queenyekelsunrivaled
-            pwd
+            ls
+            echo pwd
             # node run.js
