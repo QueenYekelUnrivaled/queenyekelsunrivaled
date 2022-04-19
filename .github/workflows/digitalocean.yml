@@ -25,7 +25,7 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
             # stop application
-            npx pm2 delete -s queenyekelsunrivaled || :
+            pm2 delete -s queenyekelsunrivaled || :
 
       - name: checkout
         uses: actions/checkout@v1
@@ -42,7 +42,7 @@ jobs:
             git fetch
             git reset --hard origin/main
             # Migrate Database
-            npx prisma migrate deploy
+            prisma migrate deploy
 
             # Setup frontend
             npm install
@@ -66,4 +66,4 @@ jobs:
           script: |
             # start application
             cd ~/queenyekelsunrivaled
-            npx pm2 restart "npm run start" --name "queenyekelsunrivaled"
+            pm2 restart "npm run start" --name "queenyekelsunrivaled"
