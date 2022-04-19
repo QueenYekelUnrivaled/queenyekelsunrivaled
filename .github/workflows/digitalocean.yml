@@ -65,8 +65,6 @@ jobs:
           username: ${{secrets.SSH_USERNAME}} # user of the server
           script: |
             # start application
+            npm install -g pm2
             cd ~/queenyekelsunrivaled
-            ls
-            echo pwd
-            pm2 list
-            # node run.js
+            pm2 start run.js
